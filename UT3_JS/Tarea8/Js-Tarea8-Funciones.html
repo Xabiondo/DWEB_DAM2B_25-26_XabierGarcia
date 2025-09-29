@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tarea8- funciones1</title>
+</head>
+<body>
+	<h1>Números primos del 1 al 100</h1>
+	<p id="demo"></p>
+	<script>
+	function esPrimo(num) {
+
+        let numDivisores = 0; 
+        for(let i = 0 ; num >= i ; i++){
+
+            if(num % i == 0){
+                numDivisores++
+
+            }
+            
+        }
+        if(numDivisores <= 2){
+            return num;
+
+        }else return null 
+
+
+	}
+
+	//llamadas a la función
+	for (let i = 2; i <= 100; i++) {
+    		if(esPrimo(i)) {
+    			document.getElementById("demo").innerHTML += (i + "</br>");
+    		}
+   	 }
+   	 </script>
+</body>
+</html>

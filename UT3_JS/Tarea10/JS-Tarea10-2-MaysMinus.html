@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mayúsculas minúsculas o ambas</title>
+</head>
+<body>
+	<h1>Mayúsculas o minúsculas</h1>
+	<button onclick="MayusMinus()">Comprobar</button>
+	<p id="resultado">aquí ira el resultado </p>
+<script>
+    function MayusMinus(texto ){
+
+        let texto = prompt("introduce un texto ")
+
+        let str = texto.toUpperCase()
+
+        resultado = ""; 
+
+        let numDiferencias
+
+        for(let i = 0 ; texto.length > i ; i++){
+
+
+            if(texto.charAt(i) =! str.charAt(i) ){
+                numDiferencias++
+
+            }
+
+        }
+        if(numDiferencias == 0 ){
+            resultado = "es todo mayusculas" 
+            return resultado
+        }else if (numDiferencias == str.length){
+            
+            resultado = "es todo minúsuculas"
+            return resultado
+        }else{
+            resultado = "son ambas"
+            return resultado
+        }
+        document.getElementById("resultado").innerHTML = resultado
+
+    }
+    
+</script>
+</body>
+</html>

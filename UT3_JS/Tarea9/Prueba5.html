@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+    function Saludo ( ) { 
+
+        persona1 = prompt("introduce un nombre")
+        persona2 = prompt("introduce un nombre")
+        document.getElementById("salida").innerHTML = `Hola ${persona1} y ${persona2 } `
+    }
+    </script>
+
+
+</head>
+<body>
+    <h1>Función para dos parámetros</h1>
+    <p>Saluda a dos personas</p>
+    <p id="salida">aquí el resultado </p>
+
+    <script>
+        Saludo("ana" , "pedro")
+    </script>
+
+
+    
+</body>
+</html>
