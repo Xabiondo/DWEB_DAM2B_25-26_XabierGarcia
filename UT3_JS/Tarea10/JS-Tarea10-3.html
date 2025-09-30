@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+
+
+    <script>
+        function myFunction(a, b) {
+        return arguments.length;
+        }
+
+        console.log(myFunction(6));
+        //Devuelve uno
+
+    </script>
+    <script>
+        function myFunction(a, b) {
+        return arguments.length;
+        }
+        console.log(myFunction(6,5));
+
+        //Devuelve dos
+
+    </script>
+
+    <script>
+        function myFun(a, b, ...manyMoreArgs) {
+          console.log("a", a);
+          //Devuelve uno, pero en String
+          console.log("b", b);
+          //Devuelve dos, pero en String
+          console.log("manyMoreArgs", manyMoreArgs);
+          //Devuelve "mayMoreArgs"
+
+        }
+
+        myFun("one", "two", "three", "four", "five", "six");
+        //Devuelve solo el último array, entocnes tiene longitud 4
+
+    </script>
     
 </body>
 </html>
