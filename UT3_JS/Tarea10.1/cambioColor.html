@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+
+    <button type="button" onclick="cambiaColor()">Cambiar Color</button>
+
+    <p id="tamanyo">Cambiame de tamaño !!</p>
+    <button type="button" onclick="cambiarTamanyoPequenyo()">Más pequeño</button>
+    <button type="button" onclick="cambiarTamanyoGrande()">Más grande</button>
+
+    <p id="desparezco"> Toca el botón de abajo y despareceré </p>
+
+        <br><br>
+    <br><br>
+
+    <button type="button" onclick="desaparecerTexto()">desaparezco</button>
+
+
+    <button type="button" onclick="aparecerTexto()">aparezco</button>
+
+
+
+    <script>
+
+        function cambiaColor(){
+
+            let colores = ['red ' , 'blue ' , 'green']
+            let aleatorio = Math.floor(Math.random() * 3)
+            document.getElementById("body").style.background = colores[aleatorio]
+            
+        }
+        function cambiarTamanyoPequenyo(){
+            document.getElementById("tamanyo").style.fontSize = "5px"
+ 
+        }
+        function cambiarTamanyoGrande(){
+            document.getElementById("tamanyo").style.fontSize = "20px"
+        }
+
+        function desaparecerTexto(){
+            document.getElementById("desparezco").style.display = "none"
+        }
+        function aparecerTexto(){
+            document.getElementById("desparezco").style.display = "inline"
+        }
+
+    </script>
+    
+</body>
+</html>

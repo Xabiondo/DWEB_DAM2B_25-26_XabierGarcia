@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ejercicio 1</h1>
+    <p id="res1"> Estos ejercicios están comentados por tener promt</p>
+
+    <h1>ejercicio 2</h1>
+    <p id="res2">Estos ejercicios están comentados por tener promt</p>
+
+    <h1>ejercicio 3</h1>
+    <p id="res3"></p>
+
+    <h1>ejercicio 4</h1>
+    <p id="res4"></p>
+
+    <h1>ejercicio 5</h1>
+    <p id="res5"></p>
+
+    <h1>ejercicio 6</h1>
+    <p id="res6"></p>
+    <p id="res6.1"></p>
+
+
+
+
+
+    <script>
+
+        //Ejercicio  1 
+       /* let nombres = []
+        let nombre1 = prompt("introduce un nombre para el primero ")
+        let nombre2 = prompt("introduce un nombre para el segundo ")
+        let nombre3 = prompt("introduce un nombre para el ter2dsdcero ")
+        nombres[0] = nombre1
+        nombres[1] = nombre2
+        nombres[2] = nombre3
+        console.log(nombres)
+
+        document.getElementById("res1").innerHTML = nombres*/
+
+        //Ejercicio 2  
+
+        /*let numeros = []
+        let numero1 = prompt("introduce un número")
+        let numero2 = prompt("introduce un número")
+        let numero3 = prompt("introduce un número")
+        let numero4 = prompt("introduce un número")
+        let numero5 = prompt("introduce un número")
+
+        numeros[0] = numero1
+        numeros[1] = numero2
+        numeros[2] = numero3
+        numeros[3] = numero4
+        numeros[4] = numero5
+ 
+        for (let i = 0; i < numeros.length; i++) {
+            numeros[i] = numeros[i] * 5 
+     
+        }
+        console.log(numeros)
+        document.getElementById("res2").innerHTML = numeros*/
+
+        //Ejercicio 3 
+
+        let nums = [ 1,2,5,2,3,5,2,3,4,5,2,3,5,2,3,4,5,6,4,6,3,2,3,6,4,3,2,8]
+        let numAlto = 0  ;
+
+        for (let index = 0; index < nums.length; index++) {
+            if(nums[index] > numAlto){
+                numAlto = nums[index]
+            }
+
+
+            
+        }
+        document.getElementById("res3").innerHTML = numAlto
+
+        //Ejercicio 4 
+
+        let a = [1 , 5 ,8 ,6 ,9 ,7]
+        let b = [12 , 8 ,9 ,4 ,9 ,7]
+
+        let c = []
+        for (let index = 0; index < a.length; index++) {
+            c[index] = (a[index] + b[index])
+
+        }
+        document.getElementById("res4").innerHTML = c
+
+        //Ejercicio 5
+        let palabras = ["numero" , "banana" , "readme" , "palabras" , "democracia " , "totalitarismo"]
+        let longitudPalabras = []
+
+        for (let index = 0; index < palabras.length; index++) {
+            longitudPalabras[index] = palabras[index].length
+
+            
+        }
+        document.getElementById("res5").innerHTML = longitudPalabras
+
+        //Ejercicio 6
+
+        /*
+        @params a: array con elementos del tipo 
+
+
+        */
+        let salarios = new Array(5)
+
+
+        function Cargar(a){
+            for (let index = 0; index < salarios.length; index++) {
+                salarios[index] = Math.floor(Math.random() * 2000)
+            }
+            return salarios
+        }
+        function calcularGastos(a){
+            let sumaSalario  = 0;
+            for (let index = 0; index < salarios.length; index++) {
+
+                sumaSalario = sumaSalario + salarios[index]
+
+            }
+            return sumaSalario
+        }
+
+        salarios = Cargar(salarios)
+        sumaSalario = calcularGastos(salarios)
+
+        document.getElementById("res6").innerHTML = salarios
+        document.getElementById("res6.1").innerHTML = sumaSalario
+     
+    </script>
+    
+</body>
+</html>

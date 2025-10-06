@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Manejando arrays</h1>
+    <p>Introduce un texto </p>
+    <textarea id="textarea"></textarea>
+
+    <br>
+    <br>
+
+    <h1>Información sobre el texto introducido </h1>
+    <p>Número de palabras</p> 
+    <p id="numPalabras"></p>
+
+    <p>Primera palabra </p> 
+    <p id="primeraPalabra"></p>
+
+    <p>Última palabra </p> 
+    <p id="ulitmaPalabra"></p>
+
+    <p>Colocadas al revés  </p> 
+    <p id="colocadasAlReves"></p>
+
+    <p>ordenadas Alfabéticamente </p> 
+    <p id="ordenadasAlfabeticamente"></p>
+
+    <p> al revés Alfabéticamente  </p> 
+    <p id="alRevesAlfabeticamente"></p>
+
+    <p><b>Hecho</b></p>
+
+
+
+    <button onclick="obtenerTodo()"> Pulsame </button>
+    <script>
+        
+        function obtenerTodo(){
+        let x = document.getElementById("textarea").value
+        console.log(x)
+
+
+        //Sacar número de palabras
+        let numeroPalabras 
+        let a = []
+        a = x.split(' ');
+        numeroPalabras = a.length
+        console.log(numeroPalabras)
+        document.getElementById("numPalabras").innerHTML = '<b>' + numeroPalabras + '</b>';
+
+
+        //Obtener primera palabra
+        
+        let primeraPalabra
+        primeraPalabra = a[0]
+        console.log(primeraPalabra)
+        document.getElementById("primeraPalabra").innerHTML = '<b>' + primeraPalabra + '</b>';
+
+        //Última palabra 
+
+        let ultimaPalabra
+        ultimaPalabra = a[numeroPalabras -1]
+        console.log(ultimaPalabra)
+        document.getElementById("ulitmaPalabra").innerHTML = '<b>' + ultimaPalabra + '</b>';
+
+        //Orden inverso
+
+        let ordenInverso  = a.reverse()
+        console.log(ordenInverso)
+        document.getElementById("colocadasAlReves").innerHTML = '<b>' + ordenInverso + '</b>';
+
+        //Ordenar alfabéticamente
+
+        let ordenarAlfabeticamente = a.sort()
+        console.log(ordenarAlfabeticamente)
+          document.getElementById("ordenadasAlfabeticamente").innerHTML = '<b>' + ordenarAlfabeticamente + '</b>';
+
+        //Ordenar reversa alfabéticamente
+
+        let ordenarAlReves = ordenarAlfabeticamente.toReversed()
+        console.log(ordenarAlReves)
+          document.getElementById("alRevesAlfabeticamente").innerHTML = '<b>' + ordenarAlReves + '</b>';
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
