@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let numeroDia 
+        let numeroMes
+
+        while(numeroDia > 30 || numeroDia  < 0){
+            numeroDia = prompt("introduce un número de dia")
+
+
+        }
+        while(numeroMes < 1 || numeroMes > 12){
+
+            numeroMes = prompt("introduce un mes en formato númerico")
+        }
+
+        str ;
+
+        if(numeroDia == 25 && numeroMes ==12){
+            str = "es navidad "
+            window.alert(str)
+        }else{
+            str = "no es navidad"
+            window.alert(str)
+        }
+
+        
+    </script>
+    
+</body>
+</html>

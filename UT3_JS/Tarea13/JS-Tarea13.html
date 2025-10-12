@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios JS - Constructores</title>
+</head>
+<body>
+  <h1>Hecho con console.log</h1>
+
+  <script>
+
+    function Personaje(primerNombre, edadAños, estadoCivil) {
+      this.primerNombre = primerNombre;
+      this.edadAños = edadAños;
+      this.estadoCivil = estadoCivil;
+    }
+
+    const personaje1 = new Personaje("Ana", 28, "soltera");
+    const personaje2 = new Personaje("Luis", 35, "casado");
+
+    console.log(personaje1);
+    console.log(personaje2);
+
+
+    personaje2.nacionalidad = "mexicana";
+
+    console.log(personaje2.nacionalidad); 
+    console.log(personaje1.nacionalidad); 
+    personaje2.infoTotal = function() {
+      return `Nombre: ${this.primerNombre}, Edad: ${this.edadAños} años, Estado civil: ${this.estadoCivil}`;
+    };
+
+    console.log(personaje2.infoTotal());
+  </script>
+</body>
+</html>

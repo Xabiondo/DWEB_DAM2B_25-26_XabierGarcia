@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        numero = prompt("introduce un número para ver si es primo ºº" , 0)
+
+        let numeroDivisores = 0;
+
+        for(let i = 2 ; i < numero ; i++){
+            if(numero % i  == 0){
+                numeroDivisores++;
+            }
+
+        }
+
+        if(numeroDivisores == 0){
+            window.alert("el número es primo")
+        }else{
+            window.alert("el número no es primo")
+        }
+
+
+    </script>
+    
+</body>
+</html>
