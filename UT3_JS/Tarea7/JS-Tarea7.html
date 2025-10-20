@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = 7
+
+        str = "tabla de multiplicar del "+num1 
+
+        for(let i =  0 ; i < 11 ; i++){
+            str = str + '\n'+ `${num1} `+ "x"+`${i}` + "=" +(i*num1)
+
+        }
+        window.alert(str)
+
+        let num2 = 8
+        str = "tabla de sumar del "+ num2
+
+        for(let i =  0 ; i < 11 ; i++){
+            str = str + '\n'+ `${num2} `+ "+"+`${i}` + "=" +(i+num2)
+
+        }
+        window.alert(str)
+
+        let num3 = 9
+        str3 = "tabla de dividir del " + num3
+
+        for(let i = 0 ; i <11 ; i++){
+            str3 = str3 + '\n' + `${num3}`+ "/" + `${i}`+ "= "(num3/i)
+        }
+        window.alert(str3)
+
+    </script>
+    
+</body>
+</html>

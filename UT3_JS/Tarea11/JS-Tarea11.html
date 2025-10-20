@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejer1. </h1>
+    <p id="resultado1"></p>
+
+<h1>Ejer2.</h1>
+<p id="resultado2"></p>
+
+<h1>Ejer3. </h1>
+<p id="resultado3"></p>
+
+<h1> Ejer5. </h1>
+<p id="resultado4"></p>
+
+<script>
+    let coche = {
+        puertas: 2,
+        ruedas: 4,
+        color: "azul"
+    };
+
+    document.getElementById("resultado1").innerHTML = "El coche tiene " + coche.puertas + " puertas.<br>";
+    document.getElementById("resultado1").innerHTML += "El coche tiene " + coche.ruedas + " ruedas.<br>";
+    document.getElementById("resultado1").innerHTML += "El color del coche es " + coche.color + ".";
+
+    let persona = { 
+        nombre: "Juana",
+        apellido: "Calamidad",
+        edad : 34
+    }
+
+    for (let propiedad in persona) {
+        document.getElementById("resultado2").innerHTML += propiedad + ": " + persona[propiedad] + "<br>";
+    }
+
+    persona.nacionalidad = "Americana";
+    document.getElementById("resultado3").innerHTML = Object.values(persona);
+    document.getElementById("resultado3").innerHTML += "<br>" + Object.keys
+    (persona);
+    document.getElementById("resultado3").innerHTML += "<br>" + Object.entries(persona);
+    document.getElementById("resultado3").innerHTML += "<br>" + Object.getOwnPropertyNames(persona);
+
+    let persona2 = {
+        nombre: "Camilo",
+        edad: 22,
+        hablar: function() {
+            return "Hola soy " + this.nombre + " y tengo " + this.edad + " años.";
+        }
+    };
+
+    document.getElementById("resultado4").innerHTML = persona2.hablar();
+
+</script>
+
+</body>
+</html>

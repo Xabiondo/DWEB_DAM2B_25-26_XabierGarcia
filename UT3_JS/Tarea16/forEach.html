@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Esta todo en el la consola de desarollador</h1>
+
+    <script>
+
+        //Ejercicio 1 , me he comido bastante la cabeza
+        const jugadores = [{nombre: "Alex", puntuacion: 1200 , rol: "Support" },
+            {nombre: "Bea" , puntuacion : 1500 , rol: "ADC" },
+            {nombre: "Carlos" , puntuacion: 900 , rol: "Jungler" } ,
+            {nombre: "Diana" , puntuacion : 1700 , rol: "mid"}
+         ]
+
+         let media = 0
+        
+         jugadores.reduce(function(acumulador , jugador , i ){
+            media = media + jugador.puntuacion
+            
+
+         })
+         media = media / jugadores.length
+         console.log(media)
+         let str = ""
+
+         jugadores.forEach(function(jugador , i ){
+            if(jugador.puntuacion > media){
+                str = str + `${jugador.nombre }   tiene mejor rendimiento que la media ` + '\n'
+                
+
+            }else 
+            str = str + `${jugador.nombre }   tiene menor rendimiento que la media ` + '\n'
+
+            
+         })
+         console.log(str)
+
+         //Ejercicio 2 
+
+         const proyectos = [{nombre: "app móvil" , horasEstimadas : 120 , horasReales : 150},
+            {nombre: "web corporativa" , horasEstimadas : 80 , horasReales : 75}, 
+            {nombre: "API interna" , horasEstimadas : 50 , horasReales: 60}
+         ]
+
+         let arrayDesviacion = []
+          arrayDesviacion  = proyectos.map(function(proyecto , i ){
+            
+            let desviacion = (proyecto.horasReales / ((proyecto.horasEstimadas * 100)-100) ) 
+
+            return {nombre: proyecto.nombre , desviacion: desviacion}
+         })
+
+         console.log(arrayDesviacion)
+
+         //Ejercicio 3 
+         const tareas = [
+             { titulo: "Diseño UI", prioridad: "alta", completada: true },
+             { titulo: "Backend API", prioridad: "media", completada: false},
+             { titulo: "Testing", prioridad: "alta", completada: false },
+             { titulo: "Documentación", prioridad: "baja", completada: true }
+            ];
+
+            let arrayFiltrado = tareas.filter(function(tarea , i ){
+
+                return tarea.prioridad == "alta" && tarea.completada == false
+
+            })
+            console.log(arrayFiltrado)
+
+        // Ejercicio 4
+
+        const ventas = [
+             { producto: "Laptop", cantidad: 3, precio: 1000 },
+             { producto: "Monitor", cantidad: 5, precio: 200 },
+             { producto: "Teclado", cantidad: 10, precio: 50 }
+            ];
+
+
+        let totalIngresos = ventas.reduce(function (acum , venta , i){
+            acum = parseInt(acum) + parseInt(venta.precio)
+            return acum
+
+        } , 0)
+        console.log(totalIngresos)
+
+
+        let totalProductos = ventas.reduce(function (acum , venta , i){
+            acum = acum + venta.cantidad
+            return acum
+        }, 0)
+
+        console.log(totalProductos)
+
+        let productosVendidos = ventas.reduce(function ( acum , venta , i){
+            acum = acum + " " + venta.producto+ " "
+            return acum
+
+        },"")
+        console.log(productosVendidos)
+
+        // Ejercicio  5 
+
+        const usuarios = [
+         { nombre: "Ana", actividad: 120, premium: true },
+         { nombre: "Luis", actividad: 50, premium: false },
+         { nombre: "Marta", actividad: 200, premium: true },
+         { nombre: "Jorge", actividad: 80, premium: false }
+        ];
+
+        let arrayNiveles = usuarios.map(function(usuario , i){
+
+            let puntos = 0
+            if(usuario.premium == true) {
+                puntos = usuario.actividad * 10
+            }else puntos = usuario.actividad * 5
+            
+            return{nombre: usuario.nombre  , puntos:puntos }
+
+        })
+        console.log(arrayNiveles)
+
+        let losBuenos = arrayNiveles.filter(function(usuario , i){
+            return usuario.puntos > 1000
+        })
+        console.log(losBuenos)
+
+        //Ejercicio 6 
+        const estudiantes = [
+         { nombre: "Ana", notas: [7, 9, 8] },
+         { nombre: "Luis", notas: [5, 6, 4] },
+         { nombre: "Marta", notas: [9, 10, 9] },
+         { nombre: "Jorge", notas: [6, 5, 7] }
+        ];
+
+        let losListos = estudiantes.filter(function(estudiante , i ){
+            let mediaEstudiante = 0 
+
+            for (let index = 0; index < estudiante.notas.length; index++) {
+                mediaEstudiante = mediaEstudiante + estudiante.notas[index]
+
+            }
+            mediaEstudiante = mediaEstudiante/estudiante.notas.length
+
+            return mediaEstudiante >= 7
+
+        })
+        console.log(losListos)
+
+        let promedioGeneral = losListos.reduce(function(acum , estudiante , i ){
+            for (let index = 0; index < estudiante.notas.length; index++) {
+                acum = acum + estudiante.notas[index]
+
+                
+            }
+
+            return acum
+         
+        } , 0)
+        promedioGeneral = promedioGeneral / 6 
+
+        console.log(promedioGeneral)
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

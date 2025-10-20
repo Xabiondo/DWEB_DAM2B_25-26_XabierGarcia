@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis ejercicios</title>
+</head>
+<body>
+
+<h2>Ejercicio 2: Setter en objeto</h2>
+<p>Objeto usuario con edad que se valida al asignar.</p>
+<button onclick="probar2()">Probar ejercicio 2</button>
+<p id="res2"></p>
+
+<h2>Ejercicio 3: Getters y setters con defineProperty</h2>
+<p>Termómetro que convierte entre grados C y F.</p>
+<button onclick="probar3()">Probar ejercicio 3</button>
+<p id="res3"></p>
+
+<script>
+
+let usuario = {
+    nombre: "Ana",
+    _edad: 0,
+    set edad(valor) {
+        if (valor >= 0 && valor <= 150) {
+            this._edad = valor;
+            return "OK, edad puesta a " + valor;
+        } else {
+            return "No vale esa edad";
+        }
+    },
+    get edad() {
+        return this._edad;
+    }
+};
+
+function probar2() {
+    let r = "";
+    r += "Pongo edad = 30 → " + (usuario.edad = 30) + "<br>";
+    r += "Pongo edad = -5 → " + (usuario.edad = -5) + "<br>";
+    r += "Edad actual: " + usuario.edad;
+    document.getElementById("res2").innerHTML = r;
+}
+
+let termo = { celsius: 0 };
+
+Object.defineProperty(termo, "fahrenheit", {
+    get: function() {
+        return (this.celsius * 9/5) + 32;
+    },
+    set: function(valor) {
+        this.celsius = (valor - 32) * 5/9;
+    }
+});
+
+function probar3() {
+    termo.celsius = 0;
+    let r = "0°C son " + termo.fahrenheit + "°F<br>";
+    termo.fahrenheit = 68;
+    r += "Al poner 68°F, ahora son " + termo.celsius + "°C";
+    document.getElementById("res3").innerHTML = r;
+}
+</script>
+
+</body>
+</html>
