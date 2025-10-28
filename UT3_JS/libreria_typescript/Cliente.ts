@@ -11,5 +11,11 @@ export class Cliente{
         this.carrito = carrito ; 
     }
 
+    public añadirLibro(libro : Libro){
+        let posicion:number =this.carrito.length -1 ;
+        this.carrito.push(libro)
+
+    }
+
 
 }
