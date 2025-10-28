@@ -1,4 +1,6 @@
-class Programador extends Empleado{
+import { Empleado } from "./empleado";
+
+export class Programador extends Empleado{
     lenguajeProgramacion : string ; 
     numProyectos : number ; 
 

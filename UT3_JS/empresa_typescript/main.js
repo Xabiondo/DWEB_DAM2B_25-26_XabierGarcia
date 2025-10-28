@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Programador_1 = require("./Programador");
+var empleado_1 = require("./empleado");
+var Empresa_1 = require("./Empresa");
+var xabi = new Programador_1.Programador("xabi", 20, 7000, "todos", 9);
+var iban = new empleado_1.Empleado("iban", 20, 850);
+var empleados = [xabi, iban];
+var empresa = new Empresa_1.Empresa(empleados, "xabisCompany");
+console.log(empresa.calcularGastoTotal());
+console.log(empresa.mostarEmpleados());

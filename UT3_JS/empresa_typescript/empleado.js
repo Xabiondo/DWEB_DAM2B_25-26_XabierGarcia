@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Empleado = void 0;
 var Empleado = /** @class */ (function () {
     function Empleado(nombre, edad, salario) {
         this.nombre = nombre;
@@ -13,3 +16,4 @@ var Empleado = /** @class */ (function () {
     };
     return Empleado;
 }());
+exports.Empleado = Empleado;

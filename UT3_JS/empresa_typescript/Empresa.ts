@@ -1,4 +1,7 @@
-class Empresa {
+import { Empleado } from "./empleado";
+import { Programador  } from "./Programador";
+
+export class Empresa {
     empleados : Empleado[];
     nombre : string ;
 
@@ -17,7 +20,7 @@ class Empresa {
     mostarEmpleados() : string{
         let str :string = " "; 
         this.empleados.forEach(element => {
-            str = str + element.mostrarInfo;
+            str = str + element.mostrarInfo();
             str = str + ' \n'
 
             
